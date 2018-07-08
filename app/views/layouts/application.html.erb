@@ -12,8 +12,10 @@
     <header>
       <div>
         <%= link_to "一覧" , blogs_path %>
-        <%= link_to "お気に入り" , favorite_path(current_user.id) %>
-        <%= link_to "新規投稿" , new_blog_path %>
+          <% if logged_in? %>
+            <%= link_to "お気に入り" , favorite_path(current_user.id) %>
+          <% end %>
+          <%= link_to "新規投稿" , new_blog_path %>
       </div>
       <div>
         <% if logged_in? %>
