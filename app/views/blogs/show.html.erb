@@ -1,0 +1,12 @@
+<h1>詳細</h1>
+
+<div>
+  <tr>
+    <td><%= @blog.user.name %></td>
+    <td><%= image_tag @blog.image %></td>
+    <td><%= @blog.title %></td>
+    <td><%= @blog.content %></td>
+  </tr>
+</div>
+
+<%= link_to "戻る" , blogs_path %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Secondgram</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <%= link_to "一覧" , blogs_path %>
+        <%= link_to "お気に入り" , favorite_path(current_user.id) %>
+        <%= link_to "新規投稿" , new_blog_path %>
+      </div>
+      <div>
+        <% if logged_in? %>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+          <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+        <% else %>
+          <%= link_to "ユーザー新規登録", new_user_path %>
+          <%= link_to "ログイン", new_session_path %>
+        <% end %>
+      </div>
+    </header>
+    <div>
+      <%= yield %>
+    </div>
+  </body>
+</html>

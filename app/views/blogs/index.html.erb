@@ -1,0 +1,38 @@
+<%= notice %>
+<h1>投稿一覧</h1>
+
+<% @blogs.each do |blog| %>
+  <div>
+    <tr>
+      <% if blog.user.image? %>
+        <td><%= image_tag blog.user.image %></td>
+      <% else %>
+        <td>アイコンなし</td>
+      <% end %>
+      <td><%= blog.user.name %></td>
+      <td><%= blog.title %></td>
+      <td><%= blog.content %></td>
+      <td><%= link_to '詳細' ,blog_path(blog.id) %></td>
+      <% if blog.user == current_user %>
+          <td>
+            <%= link_to'編集',edit_blog_path(blog.id) , data: { confirm: '本当に編集してよろしいですか？' }%>
+          </td>
+          <td>
+            <%= link_to '削除',blog_path(blog.id) , method: :delete , data: { confirm: '本当に削除してよろしいですか？' }%>
+          </td>
+        <% else %>
+        <% @favorite = current_user.favorites.find_by(blog_id: blog.id) %>
+          <% if @favorite.present? %>
+            <td>
+              <%= link_to 'お気に入り解除', favorite_path(id: @favorite.id), method: :delete%>
+            <td>
+          <% else %>
+            <td>
+              <%= link_to 'お気に入りする', favorites_path(blog_id: blog.id), method: :post %>
+            <td>
+          <% end %>
+        <% end %>
+
+    </tr>
+  </div>
+<% end %>
