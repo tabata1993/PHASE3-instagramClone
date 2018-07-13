@@ -1,12 +1,18 @@
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-<% end %>
+<div class="errors_navigation">
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+</div>
 
-<h1>ログインする</h1>
-<%= form_with(scope: :session, url: sessions_path,local:true ) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  <%= f.submit %>
-<% end %>
+<div class="new_form">
+  <img src="/images/camera.jpeg">
+  <i>Secondgram</i>
+  <%= form_with(scope: :session, url: sessions_path,local:true ) do |f| %>
+    <p><%= f.label :email %></p>
+    <p><%= f.text_field :email %></p>
+    <p><%= f.label :password %></p>
+    <p><%= f.text_field :password %></p>
+    <p><%= f.submit"login" %></p>
+    <% end %>
+    <p>Secondgramにログインしましょう！</p>
+</div>

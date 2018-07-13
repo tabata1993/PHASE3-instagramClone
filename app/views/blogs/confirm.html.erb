@@ -1,19 +1,27 @@
-<h1>以下の内容で投稿してよろしいでしょうか？</h1>
+<h1 class="page_navigation">以下の内容で投稿してよろしいでしょうか？</h1>
 <%= form_with(model:@blog ,local:true ) do |f| %>
   <%= f.hidden_field :image_cache  %>
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
 
-<p>画像： <%= image_tag @blog.image %></p>
-<p>title： <%= @blog.title %></p>
-<p>content： <%= @blog.content %></p>
+<div class="confirm_form">
+  <p><%= image_tag @blog.image %></p>
+  <tr>
+    <td><%= image_tag @blog.user.image %></td>
+    <td><%= @blog.user.name %></td>
+  </tr>
+  <p>title<p>
+  <p class="confirm_title_field"><%= @blog.title %></p>
+  <p>content</p>
+  <p class="confirm_content_field"><%= @blog.content %></p>
 
- <%= f.submit %>
-<% end %>
+   <p><%= f.submit "投稿する" %></p>
+  <% end %>
 
-<%= form_with(model: @blog ,url: new_blog_path ,local:true  ,method:'get' ) do |f| %>
-  <%= f.hidden_field :image_cache %>
-  <%= f.hidden_field :title %>
-  <%= f.hidden_field :content %>
-  <%= f.submit "戻る",name:'back' %>
-<% end %>
+  <%= form_with(model: @blog ,url: new_blog_path ,local:true  ,method:'get' ) do |f| %>
+    <%= f.hidden_field :image_cache %>
+    <%= f.hidden_field :title %>
+    <%= f.hidden_field :content %>
+    <%= f.submit "戻る",name:'back' %>
+  <% end %>
+</div>

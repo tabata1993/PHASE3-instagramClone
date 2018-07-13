@@ -1,0 +1,89 @@
+html{
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(#ffffff, #bce9f0);
+  position: relative;
+  min-height: 100%;
+}
+
+.wrap{
+  padding-bottom: 150px;
+}
+
+.header_area{
+  width: 100%;
+  background-color: #ffffff;
+  border: inset 1px #d2d9de;
+}
+
+.header_area img{
+  margin: 10px 0px 10px 65px;
+  padding-right: 5px;
+  border-right: groove 0.5px #4e4e4e;
+}
+.header_area i{
+  margin-right: 10px;
+  padding-top: 20px;
+  font-size: 2rem;
+  font-family: "Comic Sans MS";
+}
+
+.header_info{
+  float: right;
+  margin-top: 15px;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.header_info a{
+  margin-right: 10px;
+  border-right: inset 0.4px #dee8f0;
+  border-bottom: inset 0.4px #dee8f0;
+}
+
+.header_menu{
+  margin: 10px 0px 10px 100px;
+  clear:both;
+}
+
+.page_navigation{
+  background-color: rgba(#404040, 0.94);
+  color: #ffffff;
+  border: outset 1px #c1c1c1;
+  text-align: center;
+  font-family: "Comic Sans MS";
+}
+
+.move_navigation{
+  font-size: 2rem;
+  background-color:rgba(#9ccef7, 0.9);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.errors_navigation{
+  font-size: 2.5rem;
+  background-color:rgba(#f79b9b, 0.9);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.fotter_area {
+  width: 100%;
+  background-color: rgba(21, 23, 24, 0.8);
+  padding: 20px 0 10px 0;
+  color: #f3f9ec;
+  margin: auto;
+  margin-top: 60px;
+  position: absolute;
+  font-size: 15px;
+  bottom:0;
+  height: 80px;
+}
+
+.fotter_area p{
+  text-align: center;
+}

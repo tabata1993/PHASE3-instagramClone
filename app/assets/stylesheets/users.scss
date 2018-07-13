@@ -1,3 +1,30 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new_form{
+  text-align: center;
+  margin: auto;
+  width: 400px;
+  background-color: #ffffff;
+  border: outset 1px #d2d9de;
+}
+
+.new_form i{
+  font-family: "Comic Sans MS";
+}
+
+.new_form p{
+  margin-top: 10px;
+  font-family: "Comic Sans MS";
+}
+
+.content_field{
+  width: 350px;
+  height: 100px;
+}
+
+.mypage_info{
+  background-color: rgba(#e6e4e4, 0.64)
+}
+
+.mypage_info img{
+  border-radius: 50%;
+  background-color: #ffffff;
+}

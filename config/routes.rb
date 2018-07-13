@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'favorites/create'
 
+
+  root to: 'users#new'
   resources:blogs do
     collection do
       post :confirm

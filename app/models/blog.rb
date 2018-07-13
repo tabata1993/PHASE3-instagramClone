@@ -6,6 +6,6 @@ class Blog < ApplicationRecord
   has_many :favorite_users,through: :faorites, source: :user
 
   validates :image , presence: true
-  validates :title ,length: {in: 1..30}
+  validates :title ,length: {in: 1..15}
   validates :content ,length: {in: 1..140}
 end

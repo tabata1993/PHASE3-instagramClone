@@ -1,18 +1,24 @@
-<h1>ユーザー新規登録</h1>
-<% if @user.errors.any? %>
-  <% @user.errors.full_messages.each do |msg| %>
-    <%= msg %>
+<div class="errors_navigation">
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= form_with(model: @user,local:true )do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-  <%= f.label :"password(確認)" %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "作成" %>
-<% end %>
+<div class="new_form">
+  <img src="/images/camera.jpeg">
+  <i>Secondgram</i>
+  <%= form_with(model: @user,local:true )do |f| %>
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+    <p><%= f.label :email %></p>
+    <p><%= f.text_field :email %></p>
+    <p><%= f.label :password %></p>
+    <p><%= f.text_field :password %></p>
+    <p><%= f.label :"password(確認)" %></p>
+    <p><%= f.password_field :password_confirmation %></p>
+    <p><%= f.submit "登録する" %></p>
+  <% end %>
+    <p>ユーザー新規登録してSecondgramを使いましょう！</p>
+</div>

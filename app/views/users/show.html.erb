@@ -1,17 +1,18 @@
-<h1><%= @user.name %>さんのページ</h1>
-
-  <h3>メールアドレス：<%= @user.email %></h3>
-  <tr>現在のアイコン:</tr>
-  <% if @user.image? %>
+<h1 class="page_navigation"><%= @user.name %>'s page</h1>
+  <div class="mypage_info">
+    <p>email：<%= @user.email %></p>
+    <tr>現在のアイコン:</tr>
+    <% if @user.image? %>
       <td><%= image_tag @user.image %></td>
     <% else %>
       <td>アイコンは設定されていません</td>
     <% end %>
 
     <div>
-        <%= form_with(model: @user, local: true ) do |form| %>
-            <%= form.label :アイコンを変更する %>
-            <%= form.file_field :image %>
-            <%= form.submit "変更する" ,:class=>"btn btn-default" %>
-        <% end %>
+      <%= form_with(model: @user, local: true ) do |form| %>
+        <%= form.label :アイコンを変更する %>
+        <%= form.file_field :image %>
+        <%= form.submit "変更する" ,:class=>"btn btn-default" %>
+      <% end %>
     </div>
+  </div>

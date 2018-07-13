@@ -1,25 +1,29 @@
-<% if @blog.errors.any? %>
-  <% @blog.errors.full_messages.each do |msg| %>
-    <%= msg %>
+<div class="errors_navigation">
+  <% if @blog.errors.any? %>
+    <% @blog.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
-<%= form_with( model:@blog,local:true ,url: choose_new_or_edit )do |f| %>
-<% if @blog.image.url %>
-        <label> 画像：</label>
-        <P><%= @blog.image.url%><p>
-        <div>
-          <%= f.label :画像を変更する： %>
-          <%= f.file_field :image %>
-          <%= f.hidden_field :image_cache %>
-        </div>
-      <% else %>
-      <%= f.label :image %>
-      <%= f.file_field :image %>
-      <% end %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
-  <%= f.submit %>
-<% end %>
+<div class="new_form">
+  <%= form_with( model:@blog,local:true ,url: choose_new_or_edit )do |f| %>
+  <% if @blog.image.url %>
+          <label> 画像：</label>
+          <p><%= @blog.image.url%></p>
+          <div>
+            <p><%= f.label :画像を変更する： %></p>
+            <p><%= f.file_field :image %></p>
+            <p><%= f.hidden_field :image_cache %></p>
+          </div>
+        <% else %>
+        <p><%= f.label :image %></p>
+        <p><%= f.file_field :image %></p>
+        <% end %>
+    <p><%= f.label :title %></p>
+    <p><%= f.text_field :title %></p>
+    <p><%= f.label :content %></p>
+    <p><%= f.text_area :content , :cols => 45, :rows => 6.5 %></p>
+    <p><%= f.submit "投稿"%></p>
+  <% end %>
+</div>

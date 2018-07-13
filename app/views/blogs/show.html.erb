@@ -1,12 +1,15 @@
-<h1>詳細</h1>
+<h1 class="page_navigation">詳細</h1>
 
-<div>
-  <tr>
-    <td><%= @blog.user.name %></td>
-    <td><%= image_tag @blog.image %></td>
-    <td><%= @blog.title %></td>
-    <td><%= @blog.content %></td>
-  </tr>
+<div class="confirm_form">
+
+    <p><%= image_tag @blog.image %></p>
+    <tr>
+      <td><%= image_tag @blog.user.image %></td>
+      <td><%= @blog.user.name %></td>
+    </tr>
+    <p>title<p>
+    <p class="confirm_title_field"><%= @blog.title %></p>
+    <p>content</p>
+    <p class="confirm_content_field"><%= @blog.content %></p>
+    <p><%= link_to "戻る" , blogs_path  ,class:"btn btn-default" %></p>
 </div>
-
-<%= link_to "戻る" , blogs_path %>
